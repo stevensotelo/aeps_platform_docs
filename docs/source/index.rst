@@ -1,19 +1,14 @@
 ========================================
 Welcome to AEPS Platform's documentation
 ========================================
+:dfn:`Agricultura Especifica por Sitio` (AEPS) is a suite of open source tools that help organizations collect, store, 
+analyze and visualize information about productive events of crops as support in the decision-making, 
+under focus of site-specific agriculture.
 
-Guide
------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-   
-   Installation
+  :hidden:
+  :maxdepth: 1
+  :caption: Installation
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+  installation-docker
