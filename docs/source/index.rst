@@ -7,9 +7,8 @@ Guide
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-   License
-   Install
+   
+   Installation
 
 
 Indices and tables
