@@ -84,7 +84,7 @@ The folder in which you should be in **cmd** is *aeps_web_management*.
 
 .. warning::
   Please open the file **aeps_web_management/site/appsettings.json** and edit the lines 3,4, 
-  with the data to connect with **AEPS Database**. The following file is just a test with default parameters 
+  with the data to connect with **AEPS Database**. The following file is just a test with default parameters, 
   **Please don't use it in productions enviroments**
 
   .. code-block:: c#
