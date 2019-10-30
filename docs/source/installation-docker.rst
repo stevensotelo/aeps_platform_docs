@@ -8,14 +8,6 @@ the Github repository: `<https://github.com/CIAT-DAPA/aeps_platform_docker>`_. I
 how to install individually each component, however in the last part of this tutorial, 
 it will show how to install all components together.
 
-.. tip::
-  The following recommendations should be followed before to execute the commands:
-
-  - Rename the files called .env.example to .env
-  - Set real values for the variables into each file .env
-  - Check your current position, each container tells to you where you should be
-  - Commands have to be executed in command line
-
 You should start cloning the repository from Github:
 
 .. code-block:: console
@@ -23,6 +15,13 @@ You should start cloning the repository from Github:
 
     git clone https://github.com/CIAT-DAPA/aeps_platform_docker.git
 
+.. tip::
+  The following recommendations should be followed before to execute the commands:
+
+  - Rename the files called .env.example to .env
+  - Set real values for the variables into each file .env
+  - Check your current position, each container tells to you where you should be
+  - Commands have to be executed in command line
 
 AEPS Database (MySQL)
 ---------------------
@@ -76,10 +75,44 @@ If you want to check if the container is running correct:
 
   > [Entrypoint] Starting MySQL 5.7.21-1.1.4
 
-Once you have checked that the container is running, you can try connecting from MySQL Client
+Once you have checked that the container is running, you can try connecting from a MySQL Client
 
-Web administrator
------------------
+AEPS Web management (Linux)
+---------------------------
+AEPS Web management is a container based on ASP.Net Core 2.2. 
+The folder in which you should be in **cmd** is *aeps_web_management*.
+
+.. warning::
+  Please open the file **aeps_web_management/site/appsettings.json** and edit the lines 3,4, 
+  with the data to connect with **AEPS Database**. The following file is just a test with default parameters 
+  **Please don't use it in productions enviroments**
+
+  .. code-block:: c#
+    :linenos:
+
+    {
+      "ConnectionStrings": {
+        "AEPSDatabase": "server=172.17.0.2;port=3306;user=aeps_user;password=your_password;database=aeps_2_0",
+        "AEPSUsersDatabase": "server=172.17.0.2;port=3306;user=aeps_user;password=your_password;database=aeps_2_0"
+      },
+      "Logging": {
+        "LogLevel": {
+          "Default": "Warning"
+        }
+      },
+      "AllowedHosts": "*"
+    }
+
+
+.. code-block:: console
+  :linenos:
+
+  # Build the image
+  docker build -t stevensotelo/aeps_web_management:latest .
+  # Create a container like a deamon  
+  docker run --name aeps_webadmin -p 8000:80 --env-file ./.env -d stevensotelo/aeps_web_management:latest
+  docker run --name aeps_webadmin -p 8000:80 --env-file ./.env -v G:/CIAT/Code/USAID/usaid_forecast_docker/webadmin/site:/app -d stevensotelo/aeps_web_management:latest
+  docker exec -it aeps_webadmin bash
 
 ETL
 ---
