@@ -17,6 +17,14 @@ under focus of site-specific agriculture.
 .. toctree::
   :hidden:
   :maxdepth: 2
+  :caption: AEPS Collect data
+
+  collect
+  collect-odk-v1
+
+.. toctree::
+  :hidden:
+  :maxdepth: 2
   :caption: AEPS Database
 
   database
