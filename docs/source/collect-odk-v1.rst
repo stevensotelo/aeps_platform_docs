@@ -18,12 +18,6 @@ We have developed a list of forms which are available at: https://github.com/CIA
 
   "Crops","Rice production events","aeps_production_event", "CIAT", ""
 
-The forms can be edited according to the needs of each implementation
-following the rules of `XLS Form <http://xlsform.org/en/>`_. 
-Files are transformed into XML using the online tool https://opendatakit.org/xlsform/.
-For more information about Open Data Kit (ODK) you can consult the official documentation 
-at: https://docs.opendatakit.org/.
-
 .. toctree::
   :hidden:
   :maxdepth: 1
@@ -31,3 +25,9 @@ at: https://docs.opendatakit.org/.
   collect-odk-v1-administrator
   collect-odk-v1-administrator-googledrive
   collect-odk-v1-administrator-file
+
+.. toctree::
+  :hidden:
+  :maxdepth: 1
+
+  collect-odk-v1-collector

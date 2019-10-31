@@ -35,3 +35,12 @@ under focus of site-specific agriculture.
   :caption: AEPS Web administrator
 
   web-administrator
+
+.. toctree::
+  :hidden:
+  :maxdepth: 2
+  :caption: AEPS ETL
+
+  etl
+  etl-pandas
+
