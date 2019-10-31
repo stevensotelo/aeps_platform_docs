@@ -75,7 +75,9 @@ If you want to check if the container is running correct:
 
   > [Entrypoint] Starting MySQL 5.7.21-1.1.4
 
-Once you have checked that the container is running, you can try connecting from a MySQL Client
+.. note::
+  Once you have checked that the container is running, you can try connecting from a 
+  MySQL Client
 
 AEPS Web management (Linux)
 ---------------------------
@@ -109,15 +111,15 @@ The folder in which you should be in **cmd** is *aeps_web_management*.
 
   # Build the image
   docker build -t stevensotelo/aeps_web_management:latest .
-  # Create a container like a deamon  
+  # Create a container like a deamon
   docker run --name aeps_webadmin -p 8000:80 --env-file ./.env -d stevensotelo/aeps_web_management:latest
-  docker run --name aeps_webadmin -p 8000:80 --env-file ./.env -v G:/CIAT/Code/USAID/usaid_forecast_docker/webadmin/site:/app -d stevensotelo/aeps_web_management:latest
+  # Check the container
   docker exec -it aeps_webadmin bash
 
-ETL
----
-
-Superset
+AEPS ETL
 --------
+
+AEPS Superset
+-------------
 
 
