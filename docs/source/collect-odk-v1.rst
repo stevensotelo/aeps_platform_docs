@@ -1,5 +1,5 @@
-AEPS Collect data - ODK (version 1)
-===================================
+ODK (version 1)
+===============
 
 The forms are created using the `XLSForm standard <https://xlsform.org/en/>`_, then are 
 transformed with the `ODK XLSForm tool <https://opendatakit.org/xlsform/>`_

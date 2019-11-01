@@ -1,5 +1,5 @@
-AEPS Database
-=============
+Introduction
+============
 
 It is the database component, which was designed for Transactional SQL systems and built in My SQL. 
 This schema was designed for offering a dynamic structure to manage complex surveys for agriculture.

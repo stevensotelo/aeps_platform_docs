@@ -1,5 +1,5 @@
-AEPS ETL - Configuration
-========================
+Configuration
+=============
 
 The ETL module has many standard configuration files,
 which are the main parameters to execute all process of transforming data.

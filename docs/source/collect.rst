@@ -1,5 +1,5 @@
-AEPS Collect data
-=================
+Introduction
+============
 
 AEPS Collect data  is the component that allows to users capture data.
 Currently, the module is working with `ODK <https://opendatakit.org>`_ 
