@@ -147,5 +147,28 @@ how transform the raw data into database tables. Let's see what each sheet has:
   "replace","it will replace a the value in the column **value** for the column **transform**"
   "split","it will split the value of the column in two. The pattern to split will be taken of the **value** and the second value will be set in the column of **transform**."
   "add","it will add a new column. It will creates a new column (the column name will be taken from **field**) and set value **transform**."
-  "unit","it will set the units for the columns. It will take the value from the column **field** and set to the column **transform**"
-  
+  "unit","it will set the units for the columns. It will take the value from the column **transform** and set to the unit to the column in **field**"
+  "multiply","it will multiply the column by a number. It will take the value in **field** and multiply time **transform**, then it will set the value **final_value**. It will take some consideration according to field **condition**, if the value is **unit**, it will apply the multiply depending of the value in the column **units**."
+
+- **validations**: This sheet has the rules which the ETL will check before to approve some record.
+  This verification will be checked in the **translate** process. 
+
+.. csv-table:: Validations
+  :header: "Column", "Type", "Description"
+  :widths: 20, 10, 70
+
+  "table","string","it is the table's name. When table is parted of the *form* the value is the name of the table, however when table is parted of *survey* it should has the value **survey**"
+  "field","string","it is the column's name in which you will be checked. For the *form* fields, it will take the column's name into the database, however when table is parted of *survey* it should has the **machine name (value of the field name inside of the table frm_questions)**."
+  "type","string","it is the name of the type of validation which will be checked in the field. See the following table to know which are available."
+  "condition","",""
+  "condition_field","",""
+  "condition_value","",""
+  "expression","string","It is a regular expression which will be validated for the field."
+  "message","string","It is the message that will be showed to user when the record fail the validation process."
+
+.. csv-table:: List of type of validations
+  :header: "Value", "Description"
+  :widths: 20, 80
+
+  "required","It will check that the value is not null or empty."
+  "reg_exp","It will check that the value accomplish the format. The regular expression will be taken from **expression**"
