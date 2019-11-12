@@ -6,10 +6,17 @@ which are the main parameters to execute all process of transforming data.
 In this chapter, we will describe which are those parameters.
 It was designed for working with *datasources* in Excel format.
 
-Main configuration
-------------------
+.. tip::
+  **Form**: refers to the overview. The questions about farmers, technical assistants 
+  and farms are in the head of the form.
 
-The main configurataion is in the file **configuration.xlsx**.
+  **Survey**: refers to the questions that are related with the production events.
+  
+
+Parameters
+----------
+
+The parameters are in the file **configuration.xlsx**.
 This file has the global parameters to execute the transforming process.
 It has information about how to connect with database, how are the relation
 between tables into database and some additional specific conditions for each
@@ -70,10 +77,10 @@ table. Let's see what each sheet has:
   "register_date","This column set if for the records imported for the table, it should add information about *created* and *updated* fields. It will take the current date from the system. The values can be **0** (not add) or **1** (add)"
   "has_enable","This column set by default *enable* to tables with have this flag. This flag just should be enable for the tables which has the field enable. The values can be **0** (not add) or **1** (add)"
 
-Survey configuration
---------------------
+ETL Configuration
+-----------------
 
-The survay configuration is in the file **form.xlsx**.
+The ETL configuration is in the file **form.xlsx**.
 This file has the configuration about how to extract information from the source,
 how transform the raw data into database tables. Let's see what each sheet has:
 
@@ -102,3 +109,43 @@ how transform the raw data into database tables. Let's see what each sheet has:
   "far_farms","This column is to set a relationship from source and table *far_farms*. The values in this column are the columns names of the table"
   "far_plots","This column is to set a relationship from source and table *far_plots*. The values in this column are the columns names of the table"
   "far_production_events","This column is to set a relationship from source and table *far_production_events*. The values in this column are the columns names of the table"
+
+- **survey**: This sheet has the configuration of the survey. It relates the blocks and 
+  questions, which are required in the survey with the questions in the database, they
+  are related through identifiers of each side.
+
+.. csv-table:: Survey
+  :header: "Column", "Type", "Description"
+  :widths: 20, 10, 70
+
+  "block","string","This field refers to blocks of questions. It has the **machine name** of the block. The value should be the same in the field *name* of the table *frm_blocks*"
+  "repeat","int","This field is required to know of the block repeat inside of the survey. If value is **0**, it means the the block of questions won't repeat again, otherwise this field should have the value **1**."
+  "id","int","It is the id of the question inside of the database (*frm_questions*)."
+  "question","string","This field refers to blocks of questions. It has the **machine name** of the question. The value should be the same in the field *name* of the table *frm_questions*"
+  "type","string","It is the value type from source. The value can be: **unique, string, int, double, date, multiple, key**"
+
+- **transformations**: This sheet has the rules to transform raw data in new data.
+  It allows to change the final value of the surveys questions, with a set of functions 
+  available. Those transformation will be applied in the **translate** process. 
+
+.. csv-table:: Transformations
+  :header: "Column", "Type", "Description"
+  :widths: 20, 10, 70
+
+  "table","string","it is the table's name. When table is parted of the *form* the value is the name of the table, however when table is parted of *survey* it should has the value **survey**"
+  "field","string","it is the column's name in which you will apply the transformation. For the *form* fields, it will take the column's name into the database, however when table is parted of *survey* it should has the **machine name (value of the field name inside of the table frm_questions)**."
+  "type","string","it is the name of the function which will be applied to the field. See the following table to know which are available."
+  "value","","it will take a different behavior depending of the **type**"
+  "transform","","it will take a different behavior depending of the **type**"
+  "conditions","","it will take a different behavior depending of the **type**"
+  "units","","it will take a different behavior depending of the **type**"
+
+.. csv-table:: List of type of the transformations
+  :header: "Value", "Description"
+  :widths: 20, 80
+
+  "replace","it will replace a the value in the column **value** for the column **transform**"
+  "split","it will split the value of the column in two. The pattern to split will be taken of the **value** and the second value will be set in the column of **transform**."
+  "add","it will add a new column. It will creates a new column (the column name will be taken from **field**) and set value **transform**."
+  "unit","it will set the units for the columns. It will take the value from the column **field** and set to the column **transform**"
+  
