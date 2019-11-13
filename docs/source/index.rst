@@ -43,6 +43,6 @@ under focus of site-specific agriculture.
 
   etl
   etl-configuration
-  etl-pandas
+  etl-pandas-odk
   
 
