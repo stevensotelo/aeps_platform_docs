@@ -60,4 +60,3 @@ Implement an Aggregate ODK server, use Google Drive, distribution through a file
 We have documented the following methods to spread forms:
 
 - :doc:`collect-odk-v1-administrator-googledrive`
-- :doc:`collect-odk-v1-administrator-file`

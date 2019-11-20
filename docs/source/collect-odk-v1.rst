@@ -23,8 +23,7 @@ We have developed a list of forms which are available at: https://github.com/CIA
   :maxdepth: 1
 
   collect-odk-v1-administrator
-  collect-odk-v1-administrator-googledrive
-  collect-odk-v1-administrator-file
+  collect-odk-v1-administrator-googledrive  
 
 .. toctree::
   :hidden:
