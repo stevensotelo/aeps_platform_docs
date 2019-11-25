@@ -59,3 +59,27 @@ process followed by this ETL:
   .. image:: /_static/img/etl-pandas/process_survey.*
     :alt: Processing survey
     :class: device-screen-vertical side-by-side
+
+New
+---
+
+It is the process which takes data from csv files stored in the folder **new**
+and save data into database. The files, which are in the folder **new** should be 
+*csv files*, have to have the same structure that database tables.
+
+.. image:: /_static/img/etl-pandas/new.*
+  :alt: Processing new
+  :class: device-screen-vertical side-by-side
+
+- **Adding records**: This process saves all records from *CSV files* into the database.
+  It checks if a file for the table exists, then it loads data from the database (in order
+  to know what data it has currently). The next step is load data from **CSV file**.
+  Once it has all raw data, it will start to check dependencies of the current table with 
+  the others tables, it is looking how to set the **foreigns keys** of the parents tables
+  throught external ids. Once it has ready all dependencies, it will save in a *log* the 
+  issues which were found. Then it will check some parameters additional about a specific
+  fields. Finally it will clear all empty data and save data into database.
+
+  .. image:: /_static/img/etl-pandas/add.*
+    :alt: Add process
+    :class: device-screen-vertical side-by-side
