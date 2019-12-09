@@ -11,7 +11,7 @@ It was designed for working with *datasources* in Excel format.
   and farms are in the head of the form.
 
   **Survey**: refers to the questions that are related with the production events.
-  
+
 
 Parameters
 ----------
@@ -65,7 +65,13 @@ table. Let's see what each sheet has:
 
 .. note::
   We have to do this because in most of the cases we don’t have the id of each table directly, 
-  so it is a method to relate tables without lose information
+  so it is a method to relate tables without lose information.
+
+.. warning::
+  You have to take into account what you configured in this section, because you have set the same
+  fields like keys in the **form** section (*you will see forward*). The foreign keys that you set here,
+  should be setted in the form section. It is because the ETL will use those fields to connect them
+  across the tables, if they wouldn't match, it won't import nothing to the database.
 
 - **additional**: This sheet set for which tables the ETL has to add default information.
 

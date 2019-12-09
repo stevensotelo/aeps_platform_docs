@@ -35,6 +35,7 @@ under focus of site-specific agriculture.
   :caption: AEPS Web administrator
 
   web-administrator
+  web-administrator-forms
 
 .. toctree::
   :hidden:
