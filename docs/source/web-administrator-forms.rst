@@ -11,7 +11,7 @@ With forms, users can:
 - Manage forms
 - Manage blocks
 - Manage questions
-- Set rules for validating questions
+- Set options and rules for validating questions
 
 .. caution::
   It our context a **form** is the set of questions that can change for each crop's production event.
@@ -92,7 +92,6 @@ The order field is just to set in which order it should be listed, it is a numbe
 The list that you can see below are the blocks which are part of this form.
 At the same time you can remove blocks from a form, you just need to press in the icon **Delete** in front of each block's name.
 
-
 Manage blocks
 -------------
 
@@ -125,3 +124,63 @@ Let's see what information is stored inside of a block.
   "Date created","date when it was created"
   "Date updated","date when it was updated"
   "Forms","It is the list of forms associated to this block"
+
+Manage questions
+----------------
+
+.. image:: /_static/img/web-administrator-forms/forms-questions.*
+  :alt: Questions
+  :class: device-screen-vertical side-by-side
+
+A question can or cannot answered by users. All questions have to be related with just one block. 
+The questions have a *type of question*, it determines how is the way how it will be displayed to users.
+The questions, which are selected from a list, have a extra configuration called **options**.
+You are able to see details, add, edit and delete blocks.
+
+Details question
+################
+
+Let's see what information is stored inside of a question.
+
+.. image:: /_static/img/web-administrator-forms/forms-questions-details.*
+  :alt: Questions
+  :class: device-screen-vertical side-by-side
+
+.. csv-table:: Questions
+  :header: "Field", "Description"
+  :widths: 20, 80
+
+  "Block","block"
+  "Name","machine name of the question"
+  "Label","label for question"
+  "Description","short description of the question"
+  "Type","it sets the type of answer that it will hope gets in the question [string, int, double, bool, date, time, datetime, unique, multiple, geopoint, file]"
+  "Order","It sets the order of the question in each block. between the value is higher will be lower"
+  "Enable","it sets if the form is able (1) or disable (0)"
+  "Extern Id","external identificator"
+  "Date created","date when it was created"
+  "Date updated","date when it was updated"
+  "Rules","It is the list of all rules associated to this question"
+
+Options
+#######
+
+Options are just useable for questions which have unique or multiple type.
+All options just can be associated to one question.
+Let's see what information is stored inside of an option.
+
+.. image:: /_static/img/web-administrator-forms/forms-questions-options.*
+  :alt: Options
+  :class: device-screen-vertical side-by-side
+
+.. csv-table:: Questions
+  :header: "Field", "Description"
+  :widths: 20, 80
+
+  "Question","question"
+  "Name","machine name of the option"
+  "Label","label for option"
+  "Enable","it sets if the form is able (1) or disable (0)"
+  "Extern Id","external identificator"
+  "Date created","date when it was created"
+  "Date updated","date when it was updated"
