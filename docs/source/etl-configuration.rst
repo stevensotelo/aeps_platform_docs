@@ -37,6 +37,7 @@ table. Let's see what each sheet has:
   "type_process","string", "It sets the kind of process to execute. The values can be: **full**: It execute the three steps"
 
 - **dependencies**: This sheet has the relationship between tables of the database. 
+  
   The first row has the tables names, the first column has also the tables names.
   The values, which instersect tables, are the references about how the *ETL* should connect
   data from the source. The values are composed in the following way:
@@ -46,22 +47,12 @@ table. Let's see what each sheet has:
   id. The following is an example of this sheet:
 
 .. csv-table:: Dependencies
-  :header: "Table","soc_associations","con_countries","con_states","con_municipalities","soc_people","soc_technical_assistants","far_farms","far_plots","far_production_events","far_responses_bool","far_responses_date","far_responses_numeric","far_responses_options","far_responses_text"
+  :header: "Column","Description"
 
-  "soc_associations","","","","","","association-ext_id","","","","","","","",""
-  "con_countries","","","country-ext_id","","","","","","","","","","",""
-  "con_states","","","","state-ext_id","","","","","","","","","",""
-  "con_municipalities","","","","","municipality-ext_id","","","","","","","","",""
-  "soc_people","","","","","","person-document","farmer-document","","technical-document","","","","",""
-  "soc_technical_assistants","","","","","","","","","technical-person","","","","",""
-  "far_farms","","","","","","","","farm-ext_id","","","","","",""
-  "far_plots","","","","","","","","","plot-ext_id","event-ext_id","event-ext_id","event-ext_id","event-ext_id","event-ext_id"
-  "far_production_events","","","","","","","","","","event-plot","event-plot","event-plot","event-plot","event-plot"
-  "far_responses_bool","","","","","","","","","","","","","",""
-  "far_responses_date","","","","","","","","","","","","","",""
-  "far_responses_numeric","","","","","","","","","","","","","",""
-  "far_responses_options","","","","","","","","","","","","","",""
-  "far_responses_text","","","","","","","","","","","","","",""
+  "parent_table","It is the name of the table which is the parent table"
+  "parent_field","It is the field which will be used to find the id of the parent record"
+  "child_table","It is the name of current table which is being processed"
+  "child_field","It is the field which is the foreign key in the current table"
 
 .. note::
   We have to do this because in most of the cases we don’t have the id of each table directly, 
