@@ -47,14 +47,14 @@ The global settings like name, title and description will be taken from the **se
 Manage forms
 ------------
 
-.. image:: /_static/img/web-administrator-forms/forms.*
-  :alt: Forms
-  :class: device-screen-vertical side-by-side
-
 You are able to see details, add, edit and delete forms, also you can set the questions' blocks for each form.
 In case that you have many forms in your instance, you can search inside of the list just typing in the search box.
 To create a new form from scratch, you just need press in the button *Create new*.
 In front of each form in the list, you can see the options: *Details, Edit, Delete and Set Blocks*.
+
+.. image:: /_static/img/web-administrator-forms/forms.*
+  :alt: Forms
+  :class: device-screen-vertical side-by-side
 
 Details form
 ############
@@ -82,24 +82,24 @@ Let's see what information is stored into of a form.
 Set blocks
 ##########
 
-.. image:: /_static/img/web-administrator-forms/forms-set_blocks.*
-  :alt: Set Blocks
-  :class: device-screen-vertical side-by-side
-
 Once you had selected the form, you can add new blocks to this form.
 You should select the block that you want to add and set the order, then press in the button **Add**.
 The order field is just to set in which order it should be listed, it is a number.
 The list that you can see below are the blocks which are part of this form.
 At the same time you can remove blocks from a form, you just need to press in the icon **Delete** in front of each block's name.
 
+.. image:: /_static/img/web-administrator-forms/forms-set_blocks.*
+  :alt: Set Blocks
+  :class: device-screen-vertical side-by-side
+
 Manage blocks
 -------------
+
+A block is a set of question which can be added to a form. You are able to see details, add, edit and delete blocks.
 
 .. image:: /_static/img/web-administrator-forms/forms-blocks.*
   :alt: Blocks
   :class: device-screen-vertical side-by-side
-
-A block is a set of question which can be added to a form. You are able to see details, add, edit and delete blocks.
 
 Details block
 #############
@@ -128,14 +128,14 @@ Let's see what information is stored inside of a block.
 Manage questions
 ----------------
 
-.. image:: /_static/img/web-administrator-forms/forms-questions.*
-  :alt: Questions
-  :class: device-screen-vertical side-by-side
-
 A question can or cannot answered by users. All questions have to be related with just one block. 
 The questions have a *type of question*, it determines how is the way how it will be displayed to users.
 The questions, which are selected from a list, have a extra configuration called **options**.
 You are able to see details, add, edit and delete blocks.
+
+.. image:: /_static/img/web-administrator-forms/forms-questions.*
+  :alt: Questions
+  :class: device-screen-vertical side-by-side
 
 Details question
 ################
@@ -184,3 +184,25 @@ Let's see what information is stored inside of an option.
   "Extern Id","external identificator"
   "Date created","date when it was created"
   "Date updated","date when it was updated"
+
+Rules
+#######
+
+Rules are a set of statement that will be validate by other apps.
+A rule can be useable for a specific app or many of them.
+Each question is just associated to one question.
+Let's see what information is stored inside of a rule.
+
+.. image:: /_static/img/web-administrator-forms/forms-questions-rules.*
+  :alt: Rules
+  :class: device-screen-vertical side-by-side
+
+.. csv-table:: Rules
+  :header: "Field", "Description"
+  :widths: 20, 80
+
+  "Question","question"
+  "Application","the application which is gonna be validated: all, odk, pdi"
+  "Type of rule","it sets which is kind of validation to check [required, constraint, relevant, appearance, calculation, choice_filter]"
+  "Message","this message will show when the rule will be broken"
+  "Rule","rule in terms of application"
