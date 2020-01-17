@@ -120,5 +120,37 @@ AEPS ETL
 
 AEPS Superset
 -------------
+AEPS Superset is a container based on Python 3 and Node. 
+The folder in which you should be in **cmd** is *aeps_visualization_superset*.
+
+.. warning::
+  Please open the file **aeps_visualization_superset/conf/superset_config.py** and edit all lines with your custom values.
+  The following file is just a test with default parameters, **Please don't use it in productions enviroments**
+
+  .. code-block:: python
+    :linenos:
+
+    MAPBOX_API_KEY = 'your_key'
+    #CACHE_CONFIG = {
+    #    'CACHE_TYPE': 'redis',
+    #    'CACHE_DEFAULT_TIMEOUT': 300,
+    #    'CACHE_KEY_PREFIX': 'superset_',
+    #    'CACHE_REDIS_HOST': 'redis',
+    #    'CACHE_REDIS_PORT': 6379,
+    #    'CACHE_REDIS_DB': 1,
+    #    'CACHE_REDIS_URL': 'redis://redis:6379/1'}
+    SQLALCHEMY_DATABASE_URI = 'mysql://aeps_user:your_password@mysql:3306/aeps_2_0'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
+
+.. code-block:: console
+  :linenos:
+
+  # Build the image
+  docker build -t stevensotelo/aeps_superset:latest .
+  # Create a container like a deamon
+  
+
+
 
 
