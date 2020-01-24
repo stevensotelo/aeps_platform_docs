@@ -101,7 +101,9 @@ The folder in which you should be in **cmd** is *aeps_web_management*.
           "Default": "Warning"
         }
       },
-      "AllowedHosts": "*"
+      "Languages": "es-CO,en-US",
+      "AllowedHosts": "*",
+      "Installed": "false"
     }
 
 
@@ -149,8 +151,6 @@ The folder in which you should be in **cmd** is *aeps_visualization_superset*.
   # Build the image
   docker build -t stevensotelo/aeps_superset:latest .
   # Create a container like a deamon
-  
-
-
+  docker run -p 8088:8088 --name aeps_vz -d stevensotelo/aeps_superset:latest
 
 

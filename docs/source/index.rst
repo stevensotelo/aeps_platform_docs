@@ -35,6 +35,7 @@ under focus of site-specific agriculture.
   :caption: AEPS Web administrator
 
   web-administrator
+  web-administrator-install
   web-administrator-users
   web-administrator-forms
   web-administrator-setup
@@ -48,5 +49,3 @@ under focus of site-specific agriculture.
   etl
   etl-configuration
   etl-pandas-odk
-  
-

@@ -26,18 +26,20 @@ Guide
 In order to users can take advantage of this guide, we explain
 what should be the *step by step* to configure the platform.
 
-1. **Manage user**: You should create all users which are available
+1. **Install**: You have to install the website in order to create the first user.
+
+2. **Manage user**: You should create all users which are available
    to work in the platform. Users can sigin in the website in order to configure
    parameters and see dashboards about information.
 
-2. **Configure forms**: Once users have been created, you should
+3. **Configure forms**: Once users have been created, you should
    create the forms. A form is the structure how the data will be organized.
    You can import *XLS Form* or *Create a new form*, both have their implications
    that you will see in the next chapters.
 
-3. **Setup additional parameters**: Additional parameters are some global configurations
+4. **Setup additional parameters**: Additional parameters are some global configurations
    which affects reports.
 
-4. **Visualize dashboards**: Depending of the platform selected to visualize information,
+5. **Visualize dashboards**: Depending of the platform selected to visualize information,
    Some dashboards have been design to display information about *crop performance* and
    *collect performance*.
