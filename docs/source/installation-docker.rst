@@ -114,8 +114,37 @@ The folder in which you should be in **cmd** is *aeps_web_management*.
   docker build -t stevensotelo/aeps_web_management:latest .
   # Create a container like a deamon
   docker run --name aeps_webadmin -p 8000:80 --env-file ./.env -d stevensotelo/aeps_web_management:latest
-  # Check the container
+
+  # Once you have installed the website from a browser, you have to change the appsettings.json
+  # Open command line
   docker exec -it aeps_webadmin bash
+  # Opening the file appsettings.json with VIM
+  vim appsettings.json
+
+  # Change the file appsettings.json, it should be like this (remember change Connection Strings):
+  {
+    "ConnectionStrings": {
+      "AEPSDatabase": "server=172.17.0.2;port=3306;user=aeps_user;password=your_password;database=aeps_2_0",
+      "AEPSUsersDatabase": "server=172.17.0.2;port=3306;user=aeps_user;password=your_password;database=aeps_2_0"
+    },
+    "Logging": {
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    },
+    "Languages": "es-CO,en-US",
+    "AllowedHosts": "*",
+    "Installed": "true"
+  }
+  # To saved the file you should type the following command:
+  # :wq!
+
+  # Now we have to restart the container
+  exit
+  docker restart aeps_webadmin
+
+.. tip::
+  You should check the section Install of the AEPS WEB ADMINISTRATOR while you are trying to install the website
 
 AEPS ETL
 --------
