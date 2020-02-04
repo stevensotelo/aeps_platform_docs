@@ -2,7 +2,7 @@ Introduction
 ============
 
 It is a website which allows the parameterization of the **AEPS Platform**.
-It was developed in *.Net Core 2.1*. The website is multilanguage, currently
+It was developed in *.Net Core 2.2*. The website is multilanguage, currently
 it is in *spanish and english*.
 
 
