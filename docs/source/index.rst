@@ -28,6 +28,8 @@ under focus of site-specific agriculture.
   :caption: AEPS Database
 
   database
+  database-aeps
+  database-aspnet
 
 .. toctree::
   :hidden:
