@@ -8,6 +8,7 @@ This project has the following repositories in Github:
 * `<https://github.com/CIAT-DAPA/aeps_platform_forms>`_: This repository has the surveys that have been created to collect data.
 * `<https://github.com/CIAT-DAPA/aeps_platform_etl>`_: This repository has the scripts to transform data from source and save records into the database.
 * `<https://github.com/CIAT-DAPA/aeps_platform_docker>`_: This repository has the docker files to create the images of all components.
+* `<https://github.com/CIAT-DAPA/aeps_platform_visualizations>`_: This repository has the dashboards in which users can see information.
 * `<https://github.com/CIAT-DAPA/aeps_platform_docs>`_: This repository has the documentation about all platform.
 
 How does it work?

@@ -58,3 +58,11 @@ under focus of site-specific agriculture.
   etl
   etl-configuration
   etl-pandas-odk
+
+.. toctree::
+  :hidden:
+  :maxdepth: 2
+  :caption: AEPS Visualizations
+
+  visualizations
+  visualizations-superset
