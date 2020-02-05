@@ -9,6 +9,13 @@ under focus of site-specific agriculture.
 
 .. toctree::
   :hidden:
+  :maxdepth: 1
+  :caption: Get Started
+
+  get-started
+
+.. toctree::
+  :hidden:
   :maxdepth: 2
   :caption: Installation
 
